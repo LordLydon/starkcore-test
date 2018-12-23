@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     updateTextFilter(state, text) {
       state.filterText = text;
-    }
+    },
   },
   actions: {
 

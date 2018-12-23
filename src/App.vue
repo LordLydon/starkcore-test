@@ -1,10 +1,10 @@
 <template>
-  <div id="app" class="flex p-6 min-h-screen w-screen">
-    <aside class="flex items-center flex-col p-2">
-      <img src="@/assets/img/COMPANY_LOGO.png" alt="starkcore logo" class="h-32 w-32">
+  <div id="app" class="flex p-6 bg-grey container m-auto">
+    <aside class="app_aside flex items-center flex-col p-2">
+      <img src="@/assets/img/COMPANY_LOGO.png" alt="starkcore logo" class="h-24">
       <SmartFilter/>
     </aside>
-    <main class="flex flex-auto flex-col p-2">
+    <main class="flex flex-auto flex-col px-6">
       <NavBar/>
       <router-view/>
     </main>
@@ -13,32 +13,41 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
-import SmartFilter from "@/components/SmartFilter.vue";
-import FloatingButton from "@/components/FloatingButton.vue";
+import NavBar from '@/components/NavBar.vue';
+import SmartFilter from '@/components/SmartFilter.vue';
+import FloatingButton from '@/components/FloatingButton.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     NavBar,
     SmartFilter,
-    FloatingButton
-  }
+    FloatingButton,
+  },
 };
 </script>
 
 
-<style>
+<style lang="postcss">
+body {
+  @apply bg-grey min-h-screen w-screen;
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: #e6e6e6;
+  @apply antialiased text-center font-sans;
 }
 
 .ease {
   transition: ease 0.2s;
 }
+
+.rounded-btn {
+  @apply flex rounded-full;
+}
+
+.icon {
+  @apply m-auto;
+  transform: translate(0, -10%);
+}
+
 </style>

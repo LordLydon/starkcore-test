@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex m-6 mt-0 font-bold text-xs">
+  <nav class="flex mb-6 font-bold text-xs">
     <ul class="list-reset flex flex-1">
       <li class="navbar_item active">
         <router-link to="/">
@@ -26,7 +26,7 @@
         </router-link>
       </li>
       <li class="navbar_item">
-        <router-link to="/my-account">
+        <router-link to="/account">
           <img src="../assets/img/MY_ACCOUNT.png" alt="my account" class="navbar_icon">
           <span class="navbar_text">My Account</span>
         </router-link>
@@ -37,46 +37,34 @@
 
 <script>
 export default {
-  name: 'NavBar'
-}
+  name: 'NavBar',
+};
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .navbar_item {
-  @apply flex;
-  @apply flex-1;
-  @apply flex-col;
-  @apply items-center;
+  @apply flex flex-1 flex-col items-center;
 }
 
 .navbar_item a:hover {
-  @apply bg-blue-dark;
-  @apply text-white;
+  @apply bg-accent text-white;
 }
 
 .navbar_item a.router-link-exact-active {
-  @apply bg-blue-darker;
-  @apply text-white;
+  @apply bg-primary text-white;
+}
+
+.navbar_item a.router-link-exact-active:hover {
+  @apply bg-accent;
 }
 
 .navbar_item a {
-  @apply flex;
-  @apply flex-1;
-  @apply flex-col;
-  @apply items-center;
-  @apply normal-case;
-  @apply no-underline;
-  @apply h-full;
-  @apply w-full;
-  @apply p-2;
-  @apply bg-white;
-  @apply text-black;
+  @apply flex flex-1 flex-col items-center h-full w-full p-2 bg-white;
+  @apply text-black normal-case no-underline;
   transition: ease 0.2s;
 }
 
 .navbar_icon {
-  @apply h-8;
-  @apply w-8;
+  @apply h-8 w-8;
 }
 </style>
-

@@ -1,12 +1,22 @@
 <template>
-  <button class="bg-orange h-24 w-24 rounded-full text-6xl text-white hover:bg-orange-light fixed pin-b pin-r m-10 ease">
-    &plus;
+  <button class="rounded-btn fab ease select-none">
+    <span class="icon">&plus;</span>
   </button>
 </template>
 
 <script>
 export default {
   name: 'FloatingButton',
-}
+};
 </script>
 
+<style lang="postcss">
+.fab {
+  @apply bg-accent h-24 w-24 text-6xl m-10 text-white fixed pin-b pin-r m-10;
+}
+
+.fab:hover {
+  @apply bg-accent-light;
+}
+
+</style>
