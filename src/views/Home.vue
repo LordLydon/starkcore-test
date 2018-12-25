@@ -67,7 +67,6 @@ export default {
         },
       ],
       filter: '',
-      allSelected: false,
     };
   },
   computed: {
@@ -84,11 +83,10 @@ export default {
   },
   methods: {
     toggleAll($event) {
-      this.filteredPackages.forEach(p => p.selected = $event);
+      this.filteredPackages.forEach((p) => { p.selected = $event; });
     },
-    checkSelected($event) {
+    checkSelected() {
       this.allSelected = this.filteredPackages.reduce((sel, p) => sel && p.selected, true);
-      console.log($event);
     },
   },
 };

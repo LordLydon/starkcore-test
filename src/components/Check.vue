@@ -19,6 +19,14 @@ export default {
       isChecked: this.value,
     };
   },
+  watch: {
+    value: {
+      immediate: true,
+      handler(val) {
+        this.isChecked = val;
+      },
+    },
+  },
 };
 </script>
 

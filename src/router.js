@@ -24,17 +24,17 @@ export default new Router({
     {
       path: '/messages',
       name: 'messages',
-      component: () => import('./views/Messages.vue'),
+      component: () => import(/* webpackChunkName: "messages" */ './views/Messages.vue'),
     },
     {
       path: '/settings',
       name: 'settings',
-      component: () => import('./views/Settings.vue'),
+      component: () => import(/* webpackChunkName: "settings" */ './views/Settings.vue'),
     },
     {
       path: '/wishlist',
       name: 'wishlist',
-      component: () => import('./views/Wishlist.vue'),
+      component: () => import(/* webpackChunkName: "wishlist" */ './views/Wishlist.vue'),
     },
   ],
 });
